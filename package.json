@@ -1,0 +1,52 @@
+{
+  "name": "voiceforge-mcp",
+  "version": "0.2.0",
+  "description": "MCP server for voice AI development — recommend, benchmark, and scaffold STT+LLM+TTS stacks",
+  "author": "Beknazar Abdikamalov <bek@getvoiceforge.com>",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "voiceforge-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && vitest run",
+    "test:unit": "vitest run tests/*.test.ts",
+    "test:e2e": "npm run build && vitest run tests/mcp-e2e.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3",
+    "vitest": "^4.0.18"
+  },
+  "keywords": [
+    "mcp",
+    "voice-ai",
+    "stt",
+    "tts",
+    "llm",
+    "elevenlabs",
+    "deepgram",
+    "cartesia",
+    "livekit",
+    "voiceforge",
+    "claude-code"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beknazar/voiceforge-mcp"
+  }
+}
